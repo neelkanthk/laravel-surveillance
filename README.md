@@ -153,6 +153,8 @@ php artisan surveillance:remove ip 192.5.4.3
 
 #### You can use the 'surveillance' middleware on any route or route group just like any other middleware.
 
+### _NOTE: The middleware looks for the browser fingerprint in the header name as set in the `fingerprint-header-key` inside `config/surveillance.php`_
+
 ```php
 Route::middleware(["surveillance"])->get('/', function () {
     
