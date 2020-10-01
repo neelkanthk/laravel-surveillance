@@ -15,6 +15,7 @@ A Laravel package to put malicious users, IP addresses and anonymous browser fin
 
 ------------
 
+For latest documentation and README file please visit the [Wiki](https://github.com/neelkanthk/laravel-surveillance/wiki)
 
 __This package provides__:
 
