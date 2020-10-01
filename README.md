@@ -4,7 +4,18 @@
 
 A Laravel package to put malicious users, IP addresses and anonymous browser fingerprints under surveillance, write surveillance logs and block malicious ones from accessing the app.
 
-#### NOTE: This package does not provide a client side library for browser fingerprinting. [FingerprintJS Open Source](https://github.com/fingerprintjs/fingerprintjs) is a good library to use for client side browser fingerprinting.
+
+> **Please read the IMPORTANT INFORMATION below before using this package**
+
+>  **This package collects and processes various attributes that may be Personal Identifiable Information and this should therefore be disclosed and screened before adopting this package. This packages author does not take responsibility for any compliance issues users may face. Please consult legal expertise to use responsibly.**
+
+
+------------
+
+
+------------
+
+For latest documentation and README file please visit the [Wiki](https://github.com/neelkanthk/laravel-surveillance/wiki)
 
 __This package provides__:
 
@@ -15,6 +26,8 @@ _2. A command line interface to enable/disable surveillance and block/unblock ac
 _3. A fluent API to programmatically enable/disable surveillance, block/unblock access and log the requests at runtime._
 
 _4. By default the package used MySQL database as storage but the package can be extended to use virtually any storage technology._
+
+**NOTE: This package does not provide a client side library for browser fingerprinting. [FingerprintJS Open Source](https://github.com/fingerprintjs/fingerprintjs) is a good library to use for client side browser fingerprinting.**
 
 ### Minimum Requirements
 
