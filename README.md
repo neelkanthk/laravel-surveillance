@@ -1,4 +1,4 @@
-![Laravel Surveillance Logo](https://github.com/neelkanthk/repo_logos/blob/master/LaravelSurveillance.png?raw=true)
+![Laravel Surveillance Logo](https://github.com/neelkanthk/repo_logos/blob/master/LaravelSurveillance_small.png?raw=true)
 
 # Laravel Surveillance
 
