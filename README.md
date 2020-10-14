@@ -3,6 +3,15 @@
 # Surveillance
 
 A Laravel package to put malicious users, IP addresses and anonymous browser fingerprints under surveillance, write surveillance logs and block malicious ones from accessing the app.
+![](https://img.shields.io/packagist/php-v/neelkanthk/laravel-surveillance.svg?style=for-the-badge)
+![](https://img.shields.io/badge/Laravel-%3E%3D6.0-red?style=for-the-badge)
+![](https://img.shields.io/github/stars/neelkanthk/laravel-surveillance?style=for-the-badge)
+![](https://img.shields.io/packagist/dt/neelkanthk/laravel-surveillance.svg?style=for-the-badge)
+![](https://img.shields.io/github/issues/neelkanthk/laravel-surveillance?style=for-the-badge)
+![](https://img.shields.io/github/forks/neelkanthk/laravel-surveillance?style=for-the-badge)
+![](https://img.shields.io/github/license/neelkanthk/laravel-surveillance?style=for-the-badge)
+![](https://img.shields.io/packagist/v/neelkanthk/laravel-surveillance.svg?style=for-the-badge)
+![](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fneelkanthk%2Flaravel-surveillance?style=social)
 
 
 > **Please read the IMPORTANT INFORMATION below before using this package**
