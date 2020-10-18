@@ -231,4 +231,15 @@ class SurveillanceManagerRepository implements SurveillanceManagerInterface
         }
         return $exists;
     }
+
+    /**
+     * Get a single surveillance record by its id from database
+     *
+     * @param [int] $id
+     * @return void
+     */
+    public function getRecordById(int $id)
+    {
+        return SurveillanceManager::findOrFail($id);
+    }
 }

@@ -72,4 +72,12 @@ interface SurveillanceManagerInterface
      * Checks if surveillance is enabled ot not
      */
     public function isSurveillanceEnabled();
+
+    /**
+     * Get a single surveillance record by its id from database
+     *
+     * @param [int] $id
+     * @return void
+     */
+    public function getRecordById(int $id);
 }

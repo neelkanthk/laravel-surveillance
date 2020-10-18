@@ -125,4 +125,41 @@ class Surveillance
     {
         return $this->surveillanceLogger->makeLogFromRequest(request())->writeLog();
     }
+
+    /**
+     * Check if surveillance is enabled
+     *
+     * @param [string] $userId
+     * @param [string] $ipAddress
+     * @param [string] $fingerprint
+     * @return boolean
+     */
+    public function isSurveillanceEnabled($userId = null, $ipAddress = null, $fingerprint = null)
+    {
+        return $this->surveillanceManager->isSurveillanceEnabled($userId, $ipAddress, $fingerprint);
+    }
+
+    /**
+     * Check if access is blocked
+     *
+     * @param [string] $userId
+     * @param [string] $ipAddress
+     * @param [string] $fingerprint
+     * @return boolean
+     */
+    public function isAccessBlocked($userId = null, $ipAddress = null, $fingerprint = null)
+    {
+        return $this->surveillanceManager->isAccessBlocked($userId, $ipAddress, $fingerprint);
+    }
+
+    /**
+     * Get a single surveillance record by its id from database
+     *
+     * @param [int] $id
+     * @return void
+     */
+    public function getRecordById(int $id)
+    {
+        return $this->surveillanceManager->getRecordById($id);
+    }
 }
