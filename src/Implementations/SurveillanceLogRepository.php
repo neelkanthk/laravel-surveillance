@@ -101,13 +101,19 @@ class SurveillanceLogRepository implements SurveillanceLogInterface
         $query = SurveillanceLog::where("id", ">=", 1);
         if (!empty($filters["search"])) {
             $query->where("ip", "LIKE", "%" . $filters["search"] . "%")
-            ->orWhere("userid", "LIKE", "%" . $filters["search"] . "%")
-            ->orWhere("fingerprint", "LIKE", "%" . $filters["search"] . "%")
-            ->orWhere("url", "LIKE", "%" . $filters["search"] . "%")
-            ->orWhere("user_agent", "LIKE", "%" . $filters["search"] . "%")
-            ->orWhere("cookies", "LIKE", "%" . $filters["search"] . "%")
-            ->orWhere("session", "LIKE", "%" . $filters["search"] . "%")
-            ->orWhere("files", "LIKE", "%" . $filters["search"] . "%");
+                ->orWhere("userid", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("fingerprint", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("url", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("user_agent", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("cookies", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("session", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("files", "LIKE", "%" . $filters["search"] . "%");
+        }
+        if (!empty($filters["from_datetime"])) {
+            $query->where("created_at", ">=", $filters["from_datetime"]);
+        }
+        if (!empty($filters["to_datetime"])) {
+            $query->where("created_at", "<=", $filters["to_datetime"]);
         }
         return $query->orderBy("created_at", "desc")->paginate(!empty($filters["limit"]) ? $filters["limit"] : 10, ["*"], 'page', !empty($filters["page"]) ? $filters["page"] : 1)->toArray();
     }
