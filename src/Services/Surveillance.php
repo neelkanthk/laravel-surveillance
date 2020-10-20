@@ -162,4 +162,77 @@ class Surveillance
     {
         return $this->surveillanceManager->getRecordById($id);
     }
+
+    /**
+     * Return a paginated and filtered list of the surveillance records
+     *
+     * @param [array] $filters
+     * @return array
+     */
+    public function getPaginatedAndFilteredRecords($filters = array())
+    {
+        return $this->surveillanceManager->getPaginatedAndFilteredRecords($filters);
+    }
+
+    /**
+     * Delete surveillance record by its id from database
+     *
+     * @param [int] $id
+     * @return bool
+     */
+    public function removeRecordById(int $id)
+    {
+        return $this->surveillanceManager->removeRecordById($id);
+    }
+
+    /**
+     * Get count of total surveillance records from database
+     * @return int
+     */
+    public function totalRecords()
+    {
+        return $this->surveillanceManager->totalRecords();
+    }
+
+    /**
+     * Get a single surveillance log by its id from database
+     *
+     * @param [int] $id
+     * @return void
+     */
+    public function getLogById(int $id)
+    {
+        return $this->surveillanceLogger->getLogById($id);
+    }
+
+    /**
+     * Return a paginated and filtered list of the surveillance logs
+     *
+     * @param [array] $filters
+     * @return array
+     */
+    public function getPaginatedAndFilteredLogs($filters = array())
+    {
+        return $this->surveillanceLogger->getPaginatedAndFilteredLogs($filters);
+    }
+
+    /**
+     * Delete surveillance log by its id from database
+     *
+     * @param [int] $id
+     * @return bool
+     */
+    public function deleteLogById(int $id)
+    {
+        return $this->surveillanceLogger->deleteLogById($id);
+    }
+
+    /**
+     * Get count of total surveillance logs from database
+     * @return int
+     */
+    public function totalLogs()
+    {
+        return $this->surveillanceLogger->totalLogs();
+    }
 }
