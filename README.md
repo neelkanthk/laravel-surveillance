@@ -1,8 +1,17 @@
-![Laravel Surveillance Logo](https://github.com/neelkanthk/repo_logos/blob/master/surveillance_small.png?raw=true)
+![Laravel Surveillance Logo](https://github.com/neelkanthk/repo_logos/blob/master/LaravelSurveillance_small.png?raw=true)
 
-# Surveillance
+# Laravel Surveillance [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fneelkanthk%2Flaravel-surveillance)](https://twitter.com/intent/tweet?text=Laravel%20Surveillance:&url=https%3A%2F%2Fgithub.com%2Fneelkanthk%2Flaravel-surveillance)
 
-A Laravel package to put malicious users, IP addresses and anonymous browser fingerprints under surveillance, write surveillance logs and block malicious ones from accessing the app.
+Laravel Surveillance is a package to put malicious users, IP addresses and anonymous browser fingerprints under surveillance, write surveillance logs and block malicious ones from accessing the app.
+
+![](https://img.shields.io/github/v/release/neelkanthk/laravel-surveillance?style=for-the-badge)
+![](https://img.shields.io/packagist/php-v/neelkanthk/laravel-surveillance.svg?style=for-the-badge)
+![](https://img.shields.io/badge/Laravel-%3E%3D6.0-red?style=for-the-badge)
+![](https://img.shields.io/github/stars/neelkanthk/laravel-surveillance?style=for-the-badge)
+![](https://img.shields.io/github/issues/neelkanthk/laravel-surveillance?style=for-the-badge)
+![](https://img.shields.io/github/license/neelkanthk/laravel-surveillance?style=for-the-badge)
+
+------------
 
 
 > **Please read the IMPORTANT INFORMATION below before using this package**
@@ -166,6 +175,8 @@ php artisan surveillance:remove ip 192.5.4.3
 
 #### You can use the 'surveillance' middleware on any route or route group just like any other middleware.
 
+#### _NOTE: The middleware looks for the browser fingerprint in the header name as set in the `fingerprint-header-key` inside `config/surveillance.php`_
+
 ```php
 Route::middleware(["surveillance"])->get('/', function () {
     
@@ -201,7 +212,7 @@ Surveillance::logger()->writeLog();
 
 ## Customizing and Overriding the defaults
 
-### To override the default surveillance management funtionality
+### To override the default surveillance management functionality
 
 #### Step 1: Extend the `SurveillanceManagerRepository` Class and override all of its methods
 
