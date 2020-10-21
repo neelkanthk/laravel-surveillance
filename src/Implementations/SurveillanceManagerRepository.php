@@ -231,4 +231,72 @@ class SurveillanceManagerRepository implements SurveillanceManagerInterface
         }
         return $exists;
     }
+
+    /**
+     * Get a single surveillance record by its id from database
+     *
+     * @param [int] $id
+     * @return void
+     */
+    public function getRecordById(int $id)
+    {
+        return SurveillanceManager::findOrFail($id);
+    }
+
+    /**
+     * Return a paginated and filtered list of the surveillance records
+     *
+     * @param [array] $filters
+     * @return array
+     */
+    public function getPaginatedAndFilteredRecords($filters = array())
+    {
+        $query = SurveillanceManager::where("id", ">=", 1);
+        if (!empty($filters["type"])) {
+            $query->where("type", $filters["type"]);
+        }
+        if (!empty($filters["status"]) && $filters["status"] == "enabled") {
+            $query->where("surveillance_enabled", 1);
+        }
+        if (!empty($filters["status"]) && $filters["status"] == "blocked") {
+            $query->where("access_blocked", 1);
+        }
+        if (!empty($filters["status"]) && $filters["status"] == "disabled") {
+            $query->whereNull("surveillance_enabled")->orWhere("surveillance_enabled", 0);
+        }
+        if (!empty($filters["status"]) && $filters["status"] == "unblocked") {
+            $query->whereNull("access_blocked")->orWhere("access_blocked", 0);
+        }
+        if (!empty($filters["search"])) {
+            $query->where("value", "LIKE", "%" . $filters["search"] . "%");
+        }
+        //orderBy
+        if (!empty($filters["search"])) {
+            $query->orderBy("value");
+        } else {
+            $query->orderBy("id", "desc");
+        }
+
+        return $query->paginate(!empty($filters["limit"]) ? $filters["limit"] : 10, ["*"], 'page', !empty($filters["page"]) ? $filters["page"] : 1)->toArray();
+    }
+
+    /**
+     * Delete surveillance record by its id from database
+     *
+     * @param [int] $id
+     * @return bool
+     */
+    public function removeRecordById(int $id)
+    {
+        return SurveillanceManager::destroy($id);
+    }
+
+    /**
+     * Get count of total surveillance records from database
+     * @return int
+     */
+    public function totalRecords()
+    {
+        return SurveillanceManager::count();
+    }
 }

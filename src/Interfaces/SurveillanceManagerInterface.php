@@ -72,4 +72,34 @@ interface SurveillanceManagerInterface
      * Checks if surveillance is enabled ot not
      */
     public function isSurveillanceEnabled();
+
+    /**
+     * Get a single surveillance record by its id from database
+     *
+     * @param [int] $id
+     * @return void
+     */
+    public function getRecordById(int $id);
+
+    /**
+     * Return a paginated and filtered list of the surveillance records
+     *
+     * @param [array] $filters
+     * @return array
+     */
+    public function getPaginatedAndFilteredRecords($filters = array());
+
+    /**
+     * Delete surveillance record by its id from database
+     *
+     * @param [int] $id
+     * @return void
+     */
+    public function removeRecordById(int $id);
+
+    /**
+     * Get count of total surveillance records from database
+     * @return int
+     */
+    public function totalRecords();
 }
