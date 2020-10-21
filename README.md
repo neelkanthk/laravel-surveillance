@@ -1,15 +1,16 @@
 ![Laravel Surveillance Logo](https://github.com/neelkanthk/repo_logos/blob/master/LaravelSurveillance_small.png?raw=true)
 
-# Laravel Surveillance [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fneelkanthk%2Flaravel-surveillance)](https://twitter.com/intent/tweet?text=Laravel%20Surveillance:&url=https%3A%2F%2Fgithub.com%2Fneelkanthk%2Flaravel-surveillance)
-
-Laravel Surveillance is a package to put malicious users, IP addresses and anonymous browser fingerprints under surveillance, write surveillance logs and block malicious ones from accessing the app.
-
 ![](https://img.shields.io/github/v/release/neelkanthk/laravel-surveillance?style=for-the-badge)
 ![](https://img.shields.io/packagist/php-v/neelkanthk/laravel-surveillance.svg?style=for-the-badge)
 ![](https://img.shields.io/badge/Laravel-%3E%3D6.0-red?style=for-the-badge)
 ![](https://img.shields.io/github/stars/neelkanthk/laravel-surveillance?style=for-the-badge)
 ![](https://img.shields.io/github/issues/neelkanthk/laravel-surveillance?style=for-the-badge)
 ![](https://img.shields.io/github/license/neelkanthk/laravel-surveillance?style=for-the-badge)
+
+# Laravel Surveillance [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fneelkanthk%2Flaravel-surveillance)](https://twitter.com/intent/tweet?text=Laravel%20Surveillance:&url=https%3A%2F%2Fgithub.com%2Fneelkanthk%2Flaravel-surveillance)
+
+Laravel Surveillance is a package to put malicious users, IP addresses and anonymous browser fingerprints under surveillance, write surveillance logs and block malicious ones from accessing the app.
+
 
 ------------
 
