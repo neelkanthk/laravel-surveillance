@@ -89,4 +89,63 @@ class SurveillanceLogRepository implements SurveillanceLogInterface
             return $surveillanceLog;
         }
     }
+
+    /**
+     * Return a paginated and filtered list of the logs
+     *
+     * @param [array] $filters
+     * @return array
+     */
+    public function getPaginatedAndFilteredLogs($filters = array())
+    {
+        $query = SurveillanceLog::where("id", ">=", 1);
+        if (!empty($filters["search"])) {
+            $query->where("ip", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("userid", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("fingerprint", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("url", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("user_agent", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("cookies", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("session", "LIKE", "%" . $filters["search"] . "%")
+                ->orWhere("files", "LIKE", "%" . $filters["search"] . "%");
+        }
+        if (!empty($filters["from_datetime"])) {
+            $query->where("created_at", ">=", $filters["from_datetime"]);
+        }
+        if (!empty($filters["to_datetime"])) {
+            $query->where("created_at", "<=", $filters["to_datetime"]);
+        }
+        return $query->orderBy("created_at", "desc")->paginate(!empty($filters["limit"]) ? $filters["limit"] : 10, ["*"], 'page', !empty($filters["page"]) ? $filters["page"] : 1)->toArray();
+    }
+
+    /**
+     * Delete log by its id from database
+     *
+     * @param [int] $id
+     * @return bool
+     */
+    public function deleteLogById(int $id)
+    {
+        return SurveillanceLog::destroy($id);
+    }
+
+    /**
+     * Get count of total logs from database
+     * @return int
+     */
+    public function totalLogs()
+    {
+        return SurveillanceLog::count();
+    }
+
+    /**
+     * Get a single log by its id from database
+     *
+     * @param [int] $id
+     * @return void
+     */
+    public function getLogById(int $id)
+    {
+        return SurveillanceLog::findOrFail($id);
+    }
 }
