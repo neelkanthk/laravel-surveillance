@@ -25,8 +25,6 @@ Laravel Surveillance is a package to put malicious users, IP addresses and anony
 
 ------------
 
-For latest documentation and README file please visit the [Wiki](https://github.com/neelkanthk/laravel-surveillance/wiki)
-
 __This package provides__:
 
 _1. A middleware to be used on routes._
@@ -38,6 +36,10 @@ _3. A fluent API to programmatically enable/disable surveillance, block/unblock 
 _4. By default the package used MySQL database as storage but the package can be extended to use virtually any storage technology._
 
 **NOTE: This package does not provide a client side library for browser fingerprinting. [FingerprintJS Open Source](https://github.com/fingerprintjs/fingerprintjs) is a good library to use for client side browser fingerprinting.**
+
+### Important Announcement !
+
+Introducing [Laravel Surveillance UI](https://github.com/neelkanthk/laravel-surveillance-ui) : A package which provides Graphical UI for Laravel Surveillance and integrates within your existing application.
 
 ### Minimum Requirements
 
