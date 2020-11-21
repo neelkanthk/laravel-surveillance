@@ -19,7 +19,7 @@ Laravel Surveillance is a package to put malicious users, IP addresses and anony
 
 ---
 
-### What package provides
+### What this package provides
 
 1. A middleware to be used on routes
 2. A command line interface to enable/disable surveillance and block/unblock access
@@ -30,7 +30,7 @@ Laravel Surveillance is a package to put malicious users, IP addresses and anony
 
 ### Important Announcement
 
-Introducing [Laravel Surveillance UI](https://github.com/neelkanthk/laravel-surveillance-ui) : A package which provides Graphical UI for Laravel Surveillance and integrates within your existing application.
+📢 Introducing [Laravel Surveillance UI](https://github.com/neelkanthk/laravel-surveillance-ui) : A package which provides Graphical UI for Laravel Surveillance and integrates within your existing application.
 
 ### Minimum Requirements
 
@@ -185,7 +185,7 @@ php artisan surveillance:remove ip 192.5.4.3
 
 You can use the 'surveillance' middleware on any route or route group just like any other middleware.
 
-_NOTE: The middleware looks for the browser fingerprint in the header name as set in the `fingerprint-header-key` inside `config/surveillance.php`_
+**NOTE: The middleware looks for the browser fingerprint in the header name as set in the `fingerprint-header-key` inside `config/surveillance.php`**
 
 ```php
 Route::middleware(["surveillance"])->get('/', function () {
