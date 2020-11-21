@@ -23,7 +23,7 @@ class Surveillance
     /**
      * Set the surveillance type
      *
-     * @param [string] $type
+     * @param string $type
      * @return $this
      */
     public function type($type)
@@ -35,7 +35,7 @@ class Surveillance
     /**
      * Set the surveillance value
      *
-     * @param [string] $value
+     * @param string $value
      * @return $this
      */
     public function value($value)
@@ -129,9 +129,9 @@ class Surveillance
     /**
      * Check if surveillance is enabled
      *
-     * @param [string] $userId
-     * @param [string] $ipAddress
-     * @param [string] $fingerprint
+     * @param string $userId
+     * @param string $ipAddress
+     * @param string $fingerprint
      * @return boolean
      */
     public function isSurveillanceEnabled($userId = null, $ipAddress = null, $fingerprint = null)
@@ -142,9 +142,9 @@ class Surveillance
     /**
      * Check if access is blocked
      *
-     * @param [string] $userId
-     * @param [string] $ipAddress
-     * @param [string] $fingerprint
+     * @param string $userId
+     * @param string $ipAddress
+     * @param string $fingerprint
      * @return boolean
      */
     public function isAccessBlocked($userId = null, $ipAddress = null, $fingerprint = null)
@@ -155,7 +155,7 @@ class Surveillance
     /**
      * Get a single surveillance record by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return void
      */
     public function getRecordById(int $id)
@@ -166,7 +166,7 @@ class Surveillance
     /**
      * Return a paginated and filtered list of the surveillance records
      *
-     * @param [array] $filters
+     * @param array $filters
      * @return array
      */
     public function getPaginatedAndFilteredRecords($filters = array())
@@ -177,7 +177,7 @@ class Surveillance
     /**
      * Delete surveillance record by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return bool
      */
     public function removeRecordById(int $id)
@@ -197,7 +197,7 @@ class Surveillance
     /**
      * Get a single surveillance log by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return void
      */
     public function getLogById(int $id)
@@ -208,7 +208,7 @@ class Surveillance
     /**
      * Return a paginated and filtered list of the surveillance logs
      *
-     * @param [array] $filters
+     * @param array $filters
      * @return array
      */
     public function getPaginatedAndFilteredLogs($filters = array())
@@ -219,7 +219,7 @@ class Surveillance
     /**
      * Delete surveillance log by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return bool
      */
     public function deleteLogById(int $id)

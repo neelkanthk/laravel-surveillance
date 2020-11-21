@@ -17,14 +17,14 @@ interface SurveillanceManagerInterface
     /**
      * Set the surveillance type
      *
-     * @param [string] $type
+     * @param string $type
      */
     public function setType($type);
 
     /**
      * Set the surveillace value
      *
-     * @param [int/string] $value
+     * @param int|string $value
      */
     public function setValue($value);
 
@@ -76,7 +76,7 @@ interface SurveillanceManagerInterface
     /**
      * Get a single surveillance record by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return void
      */
     public function getRecordById(int $id);
@@ -84,7 +84,7 @@ interface SurveillanceManagerInterface
     /**
      * Return a paginated and filtered list of the surveillance records
      *
-     * @param [array] $filters
+     * @param array $filters
      * @return array
      */
     public function getPaginatedAndFilteredRecords($filters = array());
@@ -92,7 +92,7 @@ interface SurveillanceManagerInterface
     /**
      * Delete surveillance record by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return void
      */
     public function removeRecordById(int $id);

@@ -16,7 +16,7 @@ class SurveillanceManagerRepository implements SurveillanceManagerInterface
     /**
      * Set the surveillance type
      *
-     * @param [string] $type
+     * @param string $type
      * @return $this
      */
     public function setType($type)
@@ -28,7 +28,7 @@ class SurveillanceManagerRepository implements SurveillanceManagerInterface
     /**
      * Set the surveillace value
      *
-     * @param [int/string] $value
+     * @param int|string $value
      * @return $this
      */
     public function setValue($value)
@@ -50,7 +50,7 @@ class SurveillanceManagerRepository implements SurveillanceManagerInterface
     /**
      * Get the surveillance value
      *
-     * @return string/int
+     * @return string|int
      */
     public function getValue()
     {
@@ -168,9 +168,9 @@ class SurveillanceManagerRepository implements SurveillanceManagerInterface
     /**
      * Checks if access is blocked or not
      *
-     * @param [int] $userId
-     * @param [string] $ipAddress
-     * @param [string] $fingerprint
+     * @param int $userId
+     * @param string $ipAddress
+     * @param string $fingerprint
      * @return boolean
      */
     public function isAccessBlocked($userId = null, $ipAddress = null, $fingerprint = null)
@@ -201,9 +201,9 @@ class SurveillanceManagerRepository implements SurveillanceManagerInterface
     /**
      * Checks if surveillance is enabled ot not
      *
-     * @param [int] $userId
-     * @param [string] $ipAddress
-     * @param [string] $fingerprint
+     * @param int $userId
+     * @param string $ipAddress
+     * @param string $fingerprint
      * @return boolean
      */
     public function isSurveillanceEnabled($userId = null, $ipAddress = null, $fingerprint = null)
@@ -235,7 +235,7 @@ class SurveillanceManagerRepository implements SurveillanceManagerInterface
     /**
      * Get a single surveillance record by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return void
      */
     public function getRecordById(int $id)
@@ -246,7 +246,7 @@ class SurveillanceManagerRepository implements SurveillanceManagerInterface
     /**
      * Return a paginated and filtered list of the surveillance records
      *
-     * @param [array] $filters
+     * @param array $filters
      * @return array
      */
     public function getPaginatedAndFilteredRecords($filters = array())
@@ -283,7 +283,7 @@ class SurveillanceManagerRepository implements SurveillanceManagerInterface
     /**
      * Delete surveillance record by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return bool
      */
     public function removeRecordById(int $id)
