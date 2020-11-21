@@ -16,14 +16,14 @@ interface SurveillanceLogInterface
     /**
      * Write the log in the database
      *
-     * @param [array] $dataToLog
+     * @param array $dataToLog
      */
     public function writeLog($dataToLog = null);
 
     /**
      * Return a paginated and filtered list of the logs
      *
-     * @param [array] $filters
+     * @param array $filters
      * @return array
      */
     public function getPaginatedAndFilteredLogs($filters = array());
@@ -31,7 +31,7 @@ interface SurveillanceLogInterface
     /**
      * Get a single log by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return void
      */
     public function getLogById(int $id);
@@ -39,7 +39,7 @@ interface SurveillanceLogInterface
     /**
      * Delete log by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return void
      */
     public function deleteLogById(int $id);

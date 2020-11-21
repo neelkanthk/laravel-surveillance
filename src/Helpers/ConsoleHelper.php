@@ -11,7 +11,7 @@ class ConsoleHelper
     /**
      * Formats the output table to be shown in the console
      *
-     * @param [mixed] $unformattedData
+     * @param mixed $unformattedData
      * @return void
      */
     public static function formatConsoleTableOutput($unformattedData)

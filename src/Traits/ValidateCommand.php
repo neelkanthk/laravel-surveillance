@@ -10,7 +10,7 @@ trait ValidateCommand
     /**
      * Validate the CLI input
      *
-     * @param [type] $args
+     * @param array $args
      * @return void
      */
     public function validateArguments($args)

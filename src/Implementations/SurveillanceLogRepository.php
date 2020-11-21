@@ -12,14 +12,14 @@ class SurveillanceLogRepository implements SurveillanceLogInterface
     /**
      * The log to write
      *
-     * @var [array/object]
+     * @var array|object
      */
     protected $log;
 
     /**
      * Set the log to write
      *
-     * @param [array/object] $log
+     * @param array|object $log
      * @return void
      */
     public function setLogToWrite($log)
@@ -66,7 +66,7 @@ class SurveillanceLogRepository implements SurveillanceLogInterface
     /**
      * Write the log in the database
      *
-     * @param [array] $dataToLog
+     * @param array $dataToLog
      * @return SurveillanceLog
      */
     public function writeLog($dataToLog = null)
@@ -93,7 +93,7 @@ class SurveillanceLogRepository implements SurveillanceLogInterface
     /**
      * Return a paginated and filtered list of the logs
      *
-     * @param [array] $filters
+     * @param array $filters
      * @return array
      */
     public function getPaginatedAndFilteredLogs($filters = array())
@@ -121,7 +121,7 @@ class SurveillanceLogRepository implements SurveillanceLogInterface
     /**
      * Delete log by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return bool
      */
     public function deleteLogById(int $id)
@@ -141,7 +141,7 @@ class SurveillanceLogRepository implements SurveillanceLogInterface
     /**
      * Get a single log by its id from database
      *
-     * @param [int] $id
+     * @param int $id
      * @return void
      */
     public function getLogById(int $id)
