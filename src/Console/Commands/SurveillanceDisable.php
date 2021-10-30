@@ -46,9 +46,9 @@ class SurveillanceDisable extends Command
     public function handle()
     {
         try {
-            $this->validateArguments($this->arguments());
-            $type = $this->argument("type");
-            $value = $this->argument("value");
+            $this->validateArguments($this->arguments()); // Validate the command arguments
+            $type = isset($this->argument("type")) ?  $this->argument("type") : null;
+            $value = isset($this->argument("value")) ? $this->argument("value") : null;
             $surveillance = $this->surveillance->setType($type)->setValue($value);
             if (is_null($surveillance->getRecord())) {
                 $this->error(trans("surveillance.messages.record-not-found", ["type" => $type, "value" => $value]));
@@ -60,10 +60,16 @@ class SurveillanceDisable extends Command
                 if (!$surveillance->isSurveillanceEnabled()) {
                     $this->info(trans("surveillance.messages.disabled"));
                 }
+                else {
+                    // To Do
+                }
             }
             $output = ConsoleHelper::formatConsoleTableOutput($surveillance->getRecord());
-            if (!empty($output["rows"])) {
+            if (isset($output["rows"]) && !empty($output["rows"])) {
                 $this->table($output["header"], $output["rows"]);
+            }
+            else {
+                // To Do
             }
         } catch (Exception $ex) {
             $this->error($ex->getMessage());

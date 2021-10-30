@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Various messages used in the package
+ */
 return [
     "messages" => [
         'enabled' => "\nSurveillance has been enabled.\n",
